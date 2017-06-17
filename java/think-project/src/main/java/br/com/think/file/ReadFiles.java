@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
 
-import com.google.common.collect.Lists;
+import br.com.think.utils.ListUtils;
 
 public class ReadFiles
 {
@@ -44,14 +44,6 @@ public class ReadFiles
 		return fileData;
 	}
 	
-	public static List< List< String > > divideList( List< String > list, int sizeOfEachList )
-	{
-		if ( sizeOfEachList <= 0 )
-			sizeOfEachList = 1;
-		
-		return Lists.partition( list, sizeOfEachList );
-	}
-	
 	public static void divideFile( String pathToFile, String pathToSaveFiles, String filesName, boolean isDivisionByNumberOfFiles, int quantity ) throws IOException
 	{
 		if ( quantity <= 0 )
@@ -68,7 +60,7 @@ public class ReadFiles
 				List< String > fileLines = read( pathToFile );
 				int sizeOfEachList = isDivisionByNumberOfFiles ? ( fileLines.size() / quantity ) : quantity;
 				
-				List< List< String > > lists = divideList( fileLines, sizeOfEachList );
+				List< List< String > > lists = ListUtils.divideList( fileLines, sizeOfEachList );
 				
 				AtomicInteger fileNumber = new AtomicInteger( 0 );
 				
