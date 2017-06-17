@@ -36,7 +36,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>${pom.artifactId}.${pom.version}.${BUILD_ID}</finalName>
+		<finalName>${project.artifactId}.${project.version}.${BUILD_ID}</finalName>
 	</build>
 
 </project>
