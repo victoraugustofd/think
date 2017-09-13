@@ -23,7 +23,7 @@ public class ReadFiles
 		
 		logger.info( "Reading file " + pathToFile );
 		
-		if( validatePath( path ) )
+		if( null != path )
 		{
 			try
 			{
@@ -42,57 +42,5 @@ public class ReadFiles
 		}
 		
 		return fileData;
-	}
-	
-	public static void divideFile( String pathToFile, String pathToSaveFiles, String filesName, boolean isDivisionByNumberOfFiles, int quantity ) throws IOException
-	{
-		if ( quantity <= 0 )
-			quantity = 1;
-		
-		Path filePath = Paths.get( pathToFile );
-		
-		if( validatePath( filePath ) )
-		{
-			Path destinationPath = Paths.get( pathToSaveFiles );
-			
-			if( validatePath( destinationPath ) )
-			{
-				List< String > fileLines = read( pathToFile );
-				int sizeOfEachList = isDivisionByNumberOfFiles ? ( fileLines.size() / quantity ) : quantity;
-				
-				List< List< String > > lists = ListUtils.divideList( fileLines, sizeOfEachList );
-				
-				AtomicInteger fileNumber = new AtomicInteger( 0 );
-				
-				lists
-				.stream()
-				.forEach( list ->
-						{
-							String fileName = filesName + "_" + fileNumber.incrementAndGet() + ".txt";
-							
-							try
-							{
-								WriteFiles.write( destinationPath.toAbsolutePath().toString() + "\\" + fileName, list );
-							}
-							catch ( IOException e )
-							{
-								logger.error( e.getMessage() );
-							}
-						} );
-			}
-			else
-			{
-				logger.error( "Destination path is not valid!" );
-			}
-		}
-		else
-		{
-			logger.error( "File doesn't exist!" );
-		}
-	}
-	
-	public static boolean validatePath( Path path )
-	{
-		return null != path;
 	}
 }

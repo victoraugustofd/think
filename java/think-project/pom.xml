@@ -4,8 +4,8 @@
 
 	<groupId>br.com.think</groupId>
 	<artifactId>think</artifactId>
-	<version>1.0</version>
-	<name>Think Project</name>
+	<name>think-project</name>
+	<version>2.0</version>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -33,10 +33,28 @@
 			<version>22.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.16</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.16</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.5</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
-		<finalName>${project.artifactId}.${project.version}.${BUILD_ID}</finalName>
+		<finalName>${project.artifactId}.${project.version}</finalName>
 	</build>
 
 </project>
