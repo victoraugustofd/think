@@ -216,6 +216,7 @@ public abstract class ExcelReader
 					catch ( InstantiationException | IllegalAccessException | InvocationTargetException e )
 					{
 						logger.error( e.getMessage() );
+						throw new RuntimeException(e.getMessage());
 					}
 				}
 			}

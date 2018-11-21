@@ -34,6 +34,7 @@ public class ReadFiles
 			catch ( IOException e )
 			{
 				logger.error( e.getMessage() );
+				throw new RuntimeException(e.getMessage());
 			}
 		}
 		else

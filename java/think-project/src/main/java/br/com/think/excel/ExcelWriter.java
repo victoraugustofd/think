@@ -179,7 +179,7 @@ public class ExcelWriter
 			}
 			catch ( IOException e )
 			{
-				e.printStackTrace();
+				throw new RuntimeException(e.getMessage());
 			}
 		}
 		else
@@ -348,7 +348,7 @@ public class ExcelWriter
 			}
 			catch ( IOException e )
 			{
-				e.printStackTrace();
+				throw new RuntimeException(e.getMessage());
 			}
 		}
 		else

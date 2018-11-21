@@ -175,6 +175,7 @@ public abstract class GenericDao implements IGenericDao
 			catch ( SQLException | InstantiationException | IllegalAccessException | IOException e )
 			{
 				logger.error( e.getMessage() );
+				throw new RuntimeException(e.getMessage());
 			}
 			finally
 			{
@@ -307,6 +308,7 @@ public abstract class GenericDao implements IGenericDao
 			catch ( SQLException e )
 			{
 				logger.error( e.getMessage() );
+                throw new RuntimeException(e.getMessage());
 			}
 			finally
 			{
@@ -452,6 +454,7 @@ public abstract class GenericDao implements IGenericDao
 				catch ( IllegalArgumentException e )
 				{
 					logger.error( e.getMessage() );
+					throw new RuntimeException(e.getMessage());
 				}
 				finally
 				{
@@ -691,6 +694,7 @@ public abstract class GenericDao implements IGenericDao
 			catch( IllegalAccessException | InvocationTargetException | IllegalArgumentException | SQLException e )
 			{
 				logger.error( e.getMessage() );
+				throw new RuntimeException(e.getMessage());
 			}
 			finally
 			{
@@ -765,7 +769,7 @@ public abstract class GenericDao implements IGenericDao
 						catch ( IllegalAccessException | IllegalArgumentException | InvocationTargetException e )
 						{
 							logger.error( e.getMessage() );
-							return null;
+							throw new RuntimeException(e.getMessage());
 						}
 					} ).collect( Collectors.toList() );
 
@@ -841,6 +845,7 @@ public abstract class GenericDao implements IGenericDao
 			catch( IllegalArgumentException | SQLException e )
 			{
 				logger.error( e.getMessage() );
+				throw new RuntimeException(e.getMessage());
 			}
 			finally
 			{
@@ -879,6 +884,7 @@ public abstract class GenericDao implements IGenericDao
 			catch ( SQLException e )
 			{
 				logger.error( e.getMessage() );
+				throw new RuntimeException(e.getMessage());
 			}
 		}
 	}
@@ -895,6 +901,7 @@ public abstract class GenericDao implements IGenericDao
 			catch ( SQLException e )
 			{
 				logger.error( e.getMessage() );
+				throw new RuntimeException(e.getMessage());
 			}
 		}
 	}
@@ -911,6 +918,7 @@ public abstract class GenericDao implements IGenericDao
 			catch ( SQLException e )
 			{
 				logger.error( e.getMessage() );
+				throw new RuntimeException(e.getMessage());
 			}
 		}
 	}
