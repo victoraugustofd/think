@@ -28,4 +28,8 @@ public class Time {
 
         return dateFormat.format(randomDate);
     }
+    
+	public static String getTime() {
+		return "[ " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSS").format(new Date()) + " ] ";
+	}
 }
