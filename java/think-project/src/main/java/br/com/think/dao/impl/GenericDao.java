@@ -123,7 +123,7 @@ public abstract class GenericDao implements IGenericDao
 					}
 
 					if( isQuerySeparated )
-						query.append( queries.size() - 1 );
+						query.append( queries.get( queries.size() - 1 ) ); 
 
 					pstmt = selectTO.getConnection().prepareStatement( String.valueOf( query ) );
 
