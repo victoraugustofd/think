@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import org.apache.log4j.Logger;
 
-import br.com.think.file.ReadFiles;
+import br.com.think.utils.FileUtils;
 
 public class App
 {
@@ -16,13 +16,11 @@ public class App
 		
 		try
 		{
-			ReadFiles.divideFile( "C:\\Users\\Victor\\Desktop\\Extração_DDD_11.txt", "C:\\Users\\Victor\\Desktop", "Teste", false, 100_000 );
+			FileUtils.divideFile( "C:\\Users\\Victor\\Desktop\\Extração_DDD_11.txt", "C:\\Users\\Victor\\Desktop\\Teste", "Teste", '-', true, 10 );
 		}
 		catch ( IOException e )
 		{
 			logger.error( e.getMessage() );
 		}
-		
-		logger.info( "Begin" );
 	}
 }
